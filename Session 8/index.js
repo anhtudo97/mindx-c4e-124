@@ -29,6 +29,7 @@ const students = [{
         score: 7,
     },
 ];
+
 // Get student container
 const studentsContainer = document.querySelector(".students");
 
@@ -54,7 +55,7 @@ for (let index = 0; index < students.length; index++) {
 const inputSearch = document.querySelector(".input-search");
 
 inputSearch.addEventListener("input", (event) => {
-    // Clear data
+    // Clear older data
     let lastChild = studentsContainer.lastElementChild;
     while (lastChild) {
         studentsContainer.removeChild(lastChild);
@@ -63,7 +64,6 @@ inputSearch.addEventListener("input", (event) => {
 
     // Get value to search
     const value = event.target.value;
-    console.log(object);
 
     // Filter data by value
     const tempList = [...students].filter((student) =>
